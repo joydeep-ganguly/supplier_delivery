@@ -1,21 +1,61 @@
-<title>Worker Selection</title>
-<form method="POST">
-    Supplier:<input type="text" name='workno'>
-	<br><br>
-	Metal:<input type="text" name='mtcode'>
-	<br><br>
-	Item:  <input type="text" name='itemcode'>
-	<br><br>
-	Quantity:  <input type="text" name='qty'>
-	<br><br>
-	Weight / Unit:  <input type="text" name='wtperunit'>
-	<br><br>
-    Carret:  <input type="text" name='carret'>
-	<br><br>
-	Design Type:  <input type="text" name='xrx_sam'>
-	<br><br>
-	duration:  <input type="text" name='duration'>
-	<br><br>
-	
-	<input type="submit">
-</forms>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Worker Selection</title>
+	</head>
+<body>
+
+		<form method="POST">
+			<label for="workno">Supplier</label><br>
+			<input type="text" name='workno' id="workno">
+			<br><br>
+
+			<label for="mtcode">Metal Type</label><br>
+			<!--	<input type="text" name='mtcode' id="mtcode">	-->
+			<select name="mtcode" id="mtcode">
+				{% for each in metal_list %}
+				<option value="{{each}}">{{each}}</option>
+				{% endfor %}
+			</select>
+			<br><br>
+
+			<label for="itemcode">Item</label><br>
+			<input type="text" name='itemcode' id="itemcode">
+			<br><br>
+
+			<label for="qty">Quantity</label><br>
+			<input type="text" name='qty' id="qty">
+			<br><br>
+
+			<label for="wtperunit">Weight / Unit</label><br>
+			<input type="text" name='wtperunit' id="wtperunit">
+			<br><br>
+
+			<label for="carret">Carret</label><br>
+			<!--			<input type="text" name='carret' id="carret">			-->
+			<select name="carret" id="carret">
+				{% for each in carret_list %}
+				<option value="{{each}}">{{each}}</option>
+				{% endfor %}
+			</select>
+			<br><br>
+
+			<label for="xrx_sam">Design Type</label><br>
+			<!--			<input type="text" name='xrx_sam' id="xrx_sam">			-->
+			<select name="xrx_sam" id="xrx_sam">
+				{% for each in designtype_list %}
+				<option value="{{each}}">{{each}}</option>
+				{% endfor %}
+			</select>			
+			<br><br>
+
+			<label for="duration">Duration</label><br>
+			<input type="text" name='duration' id="duration">
+			<br><br>
+		
+			<input type="submit">
+	</forms>
+
+</body>
+</html>
+
