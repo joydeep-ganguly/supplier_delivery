@@ -2,9 +2,14 @@
 <html>
 	<head>
 		<title>Worker Selection</title>
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	</head>
-<body>
-
+<body style="background: #000;">
+	<div class="login">
 		<form method="POST">
 			<label for="workno">Supplier</label><br>
 			<input type="text" name='workno' id="workno">
@@ -54,8 +59,8 @@
 			<br><br>
 		
 			<input type="submit">
-	</forms>
-
+		</forms>
+	</div>
 </body>
 </html>
 
