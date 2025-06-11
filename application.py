@@ -29,7 +29,8 @@ def index():
         
         form_inputs = ss.transform(form_inputs)
         prediction = model.predict(form_inputs.astype('float'))
-        return "Order will be delivered - " + str(prediction_description[prediction[0]])
+        result= "Order will be delivered - " + str(prediction_description[prediction[0]])
+        return render_template('result.html', prediction_text=result)
         #return str(prediction)
         #return request.form.to_dict()
         #return form_inputs.to_html()

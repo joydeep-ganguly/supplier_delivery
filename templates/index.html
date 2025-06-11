@@ -1,66 +1,89 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Worker Selection</title>
-		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-	</head>
-<body style="background: #000;">
-	<div class="login">
-		<form method="POST">
-			<label for="workno">Supplier</label><br>
-			<input type="text" name='workno' id="workno">
-			<br><br>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Worker Selection</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="login">
+      <h2>Delivery Prediction</h2>
+      <form method="POST">
+        <label for="workno">Supplier</label><br />
+        <input type="text" name="workno" id="workno" />
+        <br />
 
-			<label for="mtcode">Metal Type</label><br>
-			<!--	<input type="text" name='mtcode' id="mtcode">	-->
-			<select name="mtcode" id="mtcode">
-				{% for each in metal_list %}
-				<option value="{{each}}">{{each}}</option>
-				{% endfor %}
-			</select>
-			<br><br>
+        <label for="mtcode">Metal Type</label><br />
+        <!--	<input type="text" name='mtcode' id="mtcode">	-->
+        <select name="mtcode" id="mtcode">
+          {% for each in metal_list %}
+          <option value="{{each}}">{{each}}</option>
+          {% endfor %}
+        </select>
+        <br />
 
-			<label for="itemcode">Item</label><br>
-			<input type="text" name='itemcode' id="itemcode">
-			<br><br>
+        <label for="itemcode">Item</label><br />
+        <input type="text" name="itemcode" id="itemcode" />
+        <br />
 
-			<label for="qty">Quantity</label><br>
-			<input type="text" name='qty' id="qty">
-			<br><br>
+        <label for="qty">Quantity</label><br />
+        <input type="text" name="qty" id="qty" />
+        <br />
 
-			<label for="wtperunit">Weight / Unit</label><br>
-			<input type="text" name='wtperunit' id="wtperunit">
-			<br><br>
+        <label for="wtperunit">Weight / Unit</label><br />
+        <input type="text" name="wtperunit" id="wtperunit" />
+        <br />
 
-			<label for="carret">Carret</label><br>
-			<!--			<input type="text" name='carret' id="carret">			-->
-			<select name="carret" id="carret">
-				{% for each in carret_list %}
-				<option value="{{each}}">{{each}}</option>
-				{% endfor %}
-			</select>
-			<br><br>
+        <label for="carret">Carret</label><br />
+        <!--			<input type="text" name='carret' id="carret">			-->
+        <select name="carret" id="carret">
+          {% for each in carret_list %}
+          <option value="{{each}}">{{each}}</option>
+          {% endfor %}
+        </select>
+        <br />
 
-			<label for="xrx_sam">Design Type</label><br>
-			<!--			<input type="text" name='xrx_sam' id="xrx_sam">			-->
-			<select name="xrx_sam" id="xrx_sam">
-				{% for each in designtype_list %}
-				<option value="{{each}}">{{each}}</option>
-				{% endfor %}
-			</select>			
-			<br><br>
+        <label for="xrx_sam">Design Type</label><br />
+        <!--			<input type="text" name='xrx_sam' id="xrx_sam">			-->
+        <select name="xrx_sam" id="xrx_sam">
+          {% for each in designtype_list %}
+          <option value="{{each}}">{{each}}</option>
+          {% endfor %}
+        </select>
+        <br />
 
-			<label for="duration">Duration</label><br>
-			<input type="text" name='duration' id="duration">
-			<br><br>
-		
-			<input type="submit">
-		</forms>
-	</div>
-</body>
+        <label for="duration">Duration</label><br />
+        <input type="text" name="duration" id="duration" />
+        <br />
+        <br />
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Predict delivery Promptness
+        </button>
+      </form>
+      <br />
+    </div>
+  </body>
 </html>
-
