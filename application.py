@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import pickle
-#from sklearn.preprocessing import StandardScaler
 from flask import Flask, render_template, request
 
 model = pickle.load(open('delivery_promptness_rf.pkl','rb'))
@@ -19,7 +18,6 @@ def index():
         designtype_list = cmap['xrx_sam'].tolist()
         return render_template('index.html',carret_list=carret_list,designtype_list=designtype_list,metal_list=metal_list)
     else:
-        #ss = StandardScaler()
         form_inputs = pd.DataFrame(request.form.to_dict(),index=[0])
         
         form_inputs['mtcode'] = form_inputs['mtcode'].apply(lambda x: lmap[x])
@@ -31,9 +29,6 @@ def index():
         prediction = model.predict(form_inputs.astype('float'))
         result= "Order will be delivered - " + str(prediction_description[prediction[0]])
         return render_template('result.html', prediction_text=result)
-        #return str(prediction)
-        #return request.form.to_dict()
-        #return form_inputs.to_html()
 
 if __name__== '__main__':
     app.run(debug=True)

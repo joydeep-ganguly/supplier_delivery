@@ -37,7 +37,6 @@
         <br />
 
         <label for="mtcode">Metal Type</label><br />
-        <!--	<input type="text" name='mtcode' id="mtcode">	-->
         <select name="mtcode" id="mtcode">
           {% for each in metal_list %}
           <option value="{{each}}">{{each}}</option>
@@ -58,8 +57,7 @@
         <br />
 
         <label for="carret">Carret</label><br />
-        <!--			<input type="text" name='carret' id="carret">			-->
-        <select name="carret" id="carret">
+         <select name="carret" id="carret">
           {% for each in carret_list %}
           <option value="{{each}}">{{each}}</option>
           {% endfor %}
@@ -67,7 +65,6 @@
         <br />
 
         <label for="xrx_sam">Design Type</label><br />
-        <!--			<input type="text" name='xrx_sam' id="xrx_sam">			-->
         <select name="xrx_sam" id="xrx_sam">
           {% for each in designtype_list %}
           <option value="{{each}}">{{each}}</option>
